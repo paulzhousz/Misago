@@ -24,8 +24,8 @@ ADD requirements.txt /
 ADD requirements-plugins.txt /
 
 RUN pip install --upgrade pip && \
-    pip install -r requirements.txt && \
-    pip install -r requirements-plugins.txt
+    pip install -i http://mirrors.aliyun.com/pypi/simple/  --trusted-host mirrors.aliyun.com -r requirements.txt && \
+    pip install -i http://mirrors.aliyun.com/pypi/simple/  --trusted-host mirrors.aliyun.com -r requirements-plugins.txt
 
 WORKDIR /srv/misago
 
